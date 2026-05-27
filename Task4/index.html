@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Space Exploration - Interactive Mission Control. Click the launch button to explore different phases of space exploration." />
+  <title>Space Exploration | Mission Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="main-body" class="phase-idle">
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- Floating Particles -->
+  <div class="particles-container" id="particles-container"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-text">MISSION CONTROL</span>
+      </div>
+      <div class="status-bar">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-label" id="status-label">STANDBY</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+
+      <!-- Phase Display -->
+      <div class="phase-badge" id="phase-badge">
+        <span id="phase-number">PHASE 00</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="hero-title" id="hero-title">
+        <span class="title-line-1" id="title-line-1">EXPLORE THE</span>
+        <span class="title-line-2" id="title-line-2">COSMOS</span>
+      </h1>
+
+      <!-- Mission Description -->
+      <p class="hero-description" id="hero-description">
+        Humanity's greatest adventure awaits. From Earth's orbit to the edges of our solar system — every mission begins with a single launch. Are you ready to ignite the engines?
+      </p>
+
+      <!-- Stats Row -->
+      <div class="stats-row" id="stats-row">
+        <div class="stat-card">
+          <span class="stat-value" id="stat-distance">0 km</span>
+          <span class="stat-label">Distance</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-speed">0 km/s</span>
+          <span class="stat-label">Velocity</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-crew">0</span>
+          <span class="stat-label">Crew</span>
+        </div>
+      </div>
+
+      <!-- Launch Button -->
+      <div class="button-wrapper">
+        <button class="launch-btn" id="launch-btn" onclick="nextPhase()">
+          <span class="btn-ring btn-ring-1"></span>
+          <span class="btn-ring btn-ring-2"></span>
+          <span class="btn-ring btn-ring-3"></span>
+          <span class="btn-icon" id="btn-icon">🚀</span>
+          <span class="btn-text" id="btn-text">INITIATE LAUNCH</span>
+          <span class="btn-sub" id="btn-sub">Click to begin mission</span>
+        </button>
+      </div>
+
+      <!-- Progress Track -->
+      <div class="progress-track">
+        <div class="progress-step" id="step-0" title="Standby">
+          <span class="step-dot"></span>
+          <span class="step-label">Standby</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="step-1" title="Launch">
+          <span class="step-dot"></span>
+          <span class="step-label">Launch</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="step-2" title="Orbit">
+          <span class="step-dot"></span>
+          <span class="step-label">Orbit</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="step-3" title="Deep Space">
+          <span class="step-dot"></span>
+          <span class="step-label">Deep Space</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" id="step-4" title="Planet">
+          <span class="step-dot"></span>
+          <span class="step-label">Planet</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Mission Log -->
+    <div class="mission-log" id="mission-log">
+      <div class="log-header">
+        <span class="log-icon">📋</span>
+        <span>MISSION LOG</span>
+      </div>
+      <ul class="log-list" id="log-list">
+        <li class="log-entry" id="log-entry-init">
+          <span class="log-time">00:00:00</span>
+          <span class="log-msg">Mission Control online. Awaiting launch sequence.</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

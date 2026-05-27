@@ -1,0 +1,796 @@
+/* ========================================================
+   LUMIERE PASTRY CO. — styles.scss
+   Built with Advanced Sass Preprocessing Techniques
+   Variable definition, nesting, mixins, maps & inheritance
+   ======================================================== */
+
+// 1. Color Palette Map (Pastel Colors)
+$pastels: (
+  "pink":       #ffd3e1,
+  "pink-light": #fff0f5,
+  "pink-dark":  #ff8da1,
+  
+  "lavender":       #e6d6ff,
+  "lavender-light": #f5eeff,
+  "lavender-dark":  #a380e6,
+  
+  "mint":       #d3ffeb,
+  "mint-light": #f0fff8,
+  "mint-dark":  #6bdba2,
+  
+  "peach":       #ffe3d1,
+  "peach-light": #fff5ee,
+  "peach-dark":  #e6a37c,
+  
+  "cream":      #fffaf0,
+  "card-bg":    #ffffff,
+  "text":       #4a3c31,
+  "text-light": #8c7360,
+  "border":     #f0e1d2
+);
+
+// 2. Sass Variables
+$font-family-display: 'Fredoka', cursive, sans-serif;
+$font-family-body:    'Quicksand', sans-serif;
+$base-spacing: 16px;
+$border-radius-sm: 8px;
+$border-radius-md: 16px;
+$border-radius-lg: 32px;
+$transition-default: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+// Helper function to extract pastel color from map
+@function pastel($color) {
+  @return map-get($pastels, $color);
+}
+
+// 3. Sass Mixins
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin soft-shadow($color: rgba(74, 60, 49, 0.06), $blur: 30px) {
+  box-shadow: 0 10px $blur $color, 0 2px 8px rgba(74, 60, 49, 0.02);
+}
+
+@mixin border-outline($color: pastel("border")) {
+  border: 2px solid $color;
+}
+
+// 4. Base & Reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: pastel("pink-light");
+  color: pastel("text");
+  font-family: $font-family-body;
+  font-weight: 500;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Subtle wavy pastel background art
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 30%, pastel("mint-light") 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, pastel("peach-light") 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+// Floating Sweet Particles
+.candy-floating-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.candy-particle {
+  position: absolute;
+  font-size: 1.25rem;
+  opacity: 0.4;
+  animation: floatCandy 10s infinite linear;
+}
+
+@keyframes floatCandy {
+  0% {
+    transform: translateY(105vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+  }
+}
+
+// 5. Header Styles (Nesting)
+.sweets-header {
+  text-align: center;
+  padding: ($base-spacing * 3) ($base-spacing * 1.5) ($base-spacing * 2);
+  max-width: 800px;
+  margin: 0 auto;
+
+  .brand-badge {
+    display: inline-block;
+    background: pastel("pink");
+    color: darken(pastel("pink-dark"), 15%);
+    font-family: $font-family-display;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: $base-spacing;
+    @include soft-shadow(rgba(255, 141, 161, 0.2), 15px);
+  }
+
+  .brand-title {
+    font-family: $font-family-display;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 700;
+    color: pastel("text");
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: $base-spacing * 0.75;
+    text-shadow: 0 4px 0 #ffffff;
+
+    span {
+      color: pastel("pink-dark");
+      text-shadow: 0 4px 0 #ffffff, 0 0 20px rgba(255, 141, 161, 0.2);
+    }
+  }
+
+  .brand-tagline {
+    font-size: 1.15rem;
+    color: pastel("text-light");
+    max-width: 600px;
+    margin: 0 auto $base-spacing;
+  }
+
+  .deco-divider {
+    @include flex-center(row, 12px);
+    margin-top: $base-spacing;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: pastel("mint-dark");
+    }
+
+    .star {
+      color: pastel("peach-dark");
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// 6. Main Grid (Nesting + Mixins)
+.sweet-lab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 ($base-spacing * 1.5) ($base-spacing * 5);
+  position: relative;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: $base-spacing * 2;
+  align-items: start;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Shared Card Style (Inheritance/Extend)
+%base-card {
+  background: pastel("card-bg");
+  border-radius: $border-radius-lg;
+  padding: $base-spacing * 2.5;
+  @include border-outline();
+  @include soft-shadow();
+  transition: $transition-default;
+}
+
+// Builder Card Form Section
+.builder-card {
+  @extend %base-card;
+
+  .card-header {
+    margin-bottom: $base-spacing * 2;
+
+    .step-num {
+      background-color: pastel("lavender");
+      color: darken(pastel("lavender-dark"), 10%);
+      font-family: $font-family-display;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      font-family: $font-family-display;
+      font-size: 1.8rem;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: pastel("text-light");
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Lab Fieldsets
+.lab-section {
+  border: none;
+  border-top: 2px dashed pastel("border");
+  padding-top: $base-spacing * 1.5;
+  margin-bottom: $base-spacing * 2;
+
+  .lab-legend {
+    font-family: $font-family-display;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: pastel("text");
+    padding: 0 10px;
+    margin-bottom: $base-spacing * 1.25;
+  }
+}
+
+// Grid of Option Cards
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.option-card {
+  cursor: pointer;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .custom-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: pastel("cream");
+    border: 2px solid transparent;
+    border-radius: $border-radius-md;
+    padding: 18px 12px;
+    height: 100%;
+    transition: $transition-default;
+
+    .option-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      transition: $transition-default;
+    }
+
+    .option-name {
+      font-family: $font-family-display;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .option-desc {
+      font-size: 0.78rem;
+      color: pastel("text-light");
+      line-height: 1.3;
+    }
+
+    // Color indicator for filling options
+    .option-indicator {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      @include border-outline(#ffffff);
+      @include soft-shadow(rgba(0,0,0,0.05), 10px);
+      
+      &.option-lavender { background-color: pastel("lavender"); }
+      &.option-rose     { background-color: pastel("pink"); }
+      &.option-mint     { background-color: pastel("mint"); }
+      &.option-peach    { background-color: pastel("peach"); }
+    }
+  }
+
+  // Active check hover styling
+  &:hover .custom-card {
+    background: #ffffff;
+    border-color: pastel("border");
+    transform: translateY(-2px);
+  }
+
+  input[type="radio"]:checked + .custom-card {
+    background: #ffffff;
+    border-color: pastel("pink-dark");
+    @include soft-shadow(rgba(255, 141, 161, 0.15), 20px);
+
+    .option-emoji {
+      transform: scale(1.18) rotate(5deg);
+    }
+    
+    .option-name {
+      color: pastel("pink-dark");
+    }
+  }
+}
+
+// Checkbox styling (Toppings)
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cb-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: pastel("cream");
+  padding: 12px 16px;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: $transition-default;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .cb-custom {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: #ffffff;
+    @include border-outline();
+    display: inline-block;
+    position: relative;
+    transition: $transition-default;
+  }
+
+  .cb-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background: #ffffff;
+    @include soft-shadow();
+  }
+
+  input[type="checkbox"]:checked ~ .cb-custom {
+    background-color: pastel("pink-dark");
+    border-color: pastel("pink-dark");
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 9px;
+      border: solid #ffffff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  input[type="checkbox"]:checked ~ .cb-label {
+    color: pastel("pink-dark");
+  }
+}
+
+// Fields Styling
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $base-spacing;
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field-group {
+  margin-bottom: $base-spacing;
+
+  .input-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: pastel("text-light");
+    margin-bottom: 6px;
+  }
+
+  .sweet-input {
+    width: 100%;
+    background-color: pastel("cream");
+    border: 2px solid transparent;
+    border-radius: $border-radius-sm;
+    color: pastel("text");
+    font-family: $font-family-body;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 16px;
+    outline: none;
+    transition: $transition-default;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &::placeholder {
+      color: darken(pastel("border"), 10%);
+    }
+
+    &:focus {
+      background-color: #ffffff;
+      border-color: pastel("lavender-dark");
+      @include soft-shadow(rgba(163, 128, 230, 0.15), 15px);
+    }
+  }
+
+  select.sweet-input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238c7360' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  .error-msg {
+    display: block;
+    font-size: 0.78rem;
+    color: darken(pastel("pink-dark"), 15%);
+    font-weight: 600;
+    margin-top: 4px;
+    min-height: 16px;
+  }
+}
+
+// Assemble Button
+.lab-footer {
+  margin-top: $base-spacing * 2;
+}
+
+.btn-assemble {
+  width: 100%;
+  @include flex-center(row, 8px);
+  background: linear-gradient(135deg, pastel("pink-dark") 0%, pastel("peach-dark") 100%);
+  color: #ffffff;
+  font-family: $font-family-display;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: 16px 24px;
+  cursor: pointer;
+  @include soft-shadow(rgba(255, 141, 161, 0.35), 25px);
+  transition: $transition-default;
+
+  .btn-sparkle {
+    font-size: 1.2rem;
+    animation: spinSparkle 3s infinite linear;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    @include soft-shadow(rgba(255, 141, 161, 0.5), 30px);
+    filter: brightness(1.03);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSparkle {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+// 7. Preview Card (Whimsical 3D Dessert Renderer)
+.preview-card {
+  @extend %base-card;
+  text-align: center;
+  position: sticky;
+  top: 40px;
+  background: radial-gradient(circle at center, #ffffff 0%, pastel("cream") 100%);
+  overflow: hidden;
+
+  .preview-sticker {
+    display: inline-block;
+    background: pastel("mint");
+    color: darken(pastel("mint-dark"), 20%);
+    font-family: $font-family-display;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: $base-spacing * 1.5;
+  }
+}
+
+// Wobbly animation for macaron pastry elements
+.pastry-assembler-visual {
+  @include flex-center(column, 0);
+  height: 280px;
+  margin-bottom: $base-spacing * 1.5;
+  position: relative;
+
+  .visual-canvas {
+    @include flex-center(column, -8px);
+    width: 220px;
+    height: 100%;
+    position: relative;
+  }
+
+  .pastry-element {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: visualWobble 6s ease-in-out infinite;
+  }
+
+  // Shell Layer Shapes
+  .pastry-top-shell {
+    width: 160px;
+    height: 48px;
+    background-color: pastel("pink");
+    border-radius: 80px 80px 25px 25px;
+    border: 3px solid #ffffff;
+    @include soft-shadow(rgba(0,0,0,0.04), 15px);
+    position: relative;
+    z-index: 3;
+    transform-origin: bottom center;
+
+    &.tart {
+      width: 180px;
+      height: 16px;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    &.choux {
+      width: 150px;
+      height: 60px;
+      border-radius: 50% 50% 40% 40%;
+      background: pastel("peach");
+      border-color: #ffffff;
+    }
+  }
+
+  .pastry-bottom-shell {
+    width: 160px;
+    height: 44px;
+    background-color: pastel("pink");
+    border-radius: 20px 20px 80px 80px;
+    border: 3px solid #ffffff;
+    @include soft-shadow(rgba(0,0,0,0.04), 15px);
+    position: relative;
+    z-index: 1;
+
+    &.tart {
+      width: 180px;
+      height: 38px;
+      border-radius: 6px 6px 40px 40px;
+      background-color: pastel("peach");
+      border: 3px solid #ffffff;
+    }
+
+    &.choux {
+      width: 150px;
+      height: 40px;
+      border-radius: 30% 30% 60% 60%;
+      background-color: pastel("peach");
+      border-color: #ffffff;
+    }
+  }
+
+  .pastry-filling {
+    width: 140px;
+    height: 52px;
+    background-color: pastel("lavender");
+    border-radius: 30px;
+    border: 3px solid #ffffff;
+    @include soft-shadow(rgba(0,0,0,0.03), 10px);
+    position: relative;
+    z-index: 2;
+    margin-top: -12px;
+    margin-bottom: -8px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 12px;
+      right: 12px;
+      height: 8px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 4px;
+    }
+  }
+
+  // Topping Visual Overlay
+  .toppings-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+
+    .v-topping {
+      position: absolute;
+      font-size: 1.25rem;
+      animation: particleBounce 2s infinite ease-in-out;
+    }
+  }
+}
+
+@keyframes visualWobble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+@keyframes particleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.confection-status {
+  background: #ffffff;
+  border-radius: $border-radius-md;
+  padding: 16px;
+  @include border-outline(pastel("border"));
+  text-align: left;
+
+  h3 {
+    font-family: $font-family-display;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: pastel("text");
+  }
+
+  .formula-list {
+    list-style: none;
+
+    li {
+      font-size: 0.88rem;
+      color: pastel("text-light");
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+
+      strong {
+        color: pastel("text");
+      }
+
+      span {
+        color: pastel("pink-dark");
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// 8. Order Success Screen Modal
+.order-success-screen {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(74, 60, 49, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  @include flex-center(row, 0);
+  animation: fadeIn 0.4s ease;
+
+  .modal-card {
+    background: #ffffff;
+    border-radius: $border-radius-lg;
+    padding: $base-spacing * 3;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    @include border-outline(pastel("pink"));
+    @include soft-shadow(rgba(0,0,0,0.1), 40px);
+    animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    .modal-crown {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      display: inline-block;
+      animation: crownBob 2s infinite ease-in-out;
+    }
+
+    .modal-title {
+      font-family: $font-family-display;
+      font-size: 1.8rem;
+      color: pastel("text");
+      margin-bottom: 12px;
+    }
+
+    .modal-text {
+      color: pastel("text-light");
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.btn-sweet-action {
+  background: pastel("mint");
+  color: darken(pastel("mint-dark"), 20%);
+  font-family: $font-family-display;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: $transition-default;
+
+  &:hover {
+    background: darken(pastel("mint"), 5%);
+    transform: translateY(-2px);
+    @include soft-shadow(rgba(107, 219, 162, 0.3), 15px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes crownBob {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+// 9. Footer
+.sweets-footer {
+  text-align: center;
+  padding: $base-spacing * 2.5;
+  border-top: 2px dashed pastel("border");
+  background: pastel("cream");
+  color: pastel("text-light");
+  font-size: 0.88rem;
+
+  span {
+    color: pastel("pink-dark");
+    font-weight: 700;
+  }
+}

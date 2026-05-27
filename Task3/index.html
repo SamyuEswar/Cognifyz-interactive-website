@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalé — Healthy Living & Wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-logo">Vitalé</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#workouts">Workouts</a></li>
+        <li><a href="#mindfulness">Mindfulness</a></li>
+        <li><a href="#sleep">Sleep</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero-text">
+        <span class="hero-badge">🌿 Your Daily Wellness Guide</span>
+        <h1>Eat Well. Move More.<br><span class="gradient-text">Live Longer.</span></h1>
+        <p>Science-backed tips, workout routines, meal plans, and mindfulness practices — everything you need to build a healthier life, starting today.</p>
+        <div class="hero-pills">
+            <a href="#nutrition" class="pill-link">🥗 Nutrition</a>
+            <a href="#workouts" class="pill-link">🏋️ Workouts</a>
+            <a href="#mindfulness" class="pill-link">🧘 Mindfulness</a>
+            <a href="#sleep" class="pill-link">😴 Sleep</a>
+        </div>
+    </div>
+    <div class="hero-img-wrap">
+        <img src="https://picsum.photos/seed/vitale1/560/640" alt="Healthy lifestyle" class="hero-img">
+        <div class="hero-tip-card">
+            <span class="tip-icon">💡</span>
+            <div><strong>Today's Tip</strong><p>Drink 8 glasses of water daily to boost metabolism by up to 30%.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- DAILY HEALTH TIPS -->
+<section class="tips-bar">
+    <div class="tips-inner">
+        <span class="tips-label">⚡ Quick Facts</span>
+        <div class="tips-scroll">
+            <div class="tip-item">🏃 30 min of walking burns ~150 calories</div>
+            <div class="tip-item">🥦 Broccoli has more Vitamin C than an orange</div>
+            <div class="tip-item">💧 You lose 1–2 litres of water just breathing</div>
+            <div class="tip-item">🍎 An apple a day reduces LDL cholesterol</div>
+            <div class="tip-item">😴 7–9 hours of sleep repairs muscle tissue</div>
+        </div>
+    </div>
+</section>
+
+<!-- NUTRITION SECTION -->
+<section class="content-section" id="nutrition">
+    <div class="section-header reveal">
+        <span class="section-tag">🥗 Nutrition</span>
+        <h2>What to Eat for a <span class="gradient-text">Healthier Body</span></h2>
+        <p>Real food guidance based on science — not fads.</p>
+    </div>
+
+    <!-- Meal Plan Table -->
+    <div class="meal-plan reveal">
+        <h3>📅 Sample 1-Day Balanced Meal Plan</h3>
+        <div class="table-wrap">
+            <table class="meal-table">
+                <thead>
+                    <tr><th>Meal</th><th>What to Eat</th><th>Calories</th><th>Key Nutrients</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="meal-label">☀️ Breakfast</span></td>
+                        <td>Oats with banana, chia seeds & almond milk</td>
+                        <td><span class="cal-badge">380 kcal</span></td>
+                        <td>Fibre, Potassium, Omega-3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="meal-label">🍎 Mid-Morning</span></td>
+                        <td>Greek yogurt with mixed berries & walnuts</td>
+                        <td><span class="cal-badge">210 kcal</span></td>
+                        <td>Protein, Antioxidants</td>
+                    </tr>
+                    <tr>
+                        <td><span class="meal-label">🌤 Lunch</span></td>
+                        <td>Grilled chicken, brown rice, steamed broccoli</td>
+                        <td><span class="cal-badge">520 kcal</span></td>
+                        <td>Protein, Complex Carbs, Iron</td>
+                    </tr>
+                    <tr>
+                        <td><span class="meal-label">🌙 Dinner</span></td>
+                        <td>Salmon fillet, quinoa, roasted sweet potato</td>
+                        <td><span class="cal-badge">490 kcal</span></td>
+                        <td>Omega-3, Vitamin B12, Fibre</td>
+                    </tr>
+                    <tr>
+                        <td><span class="meal-label">🌿 Snack</span></td>
+                        <td>Hummus with carrot & cucumber sticks</td>
+                        <td><span class="cal-badge">150 kcal</span></td>
+                        <td>Healthy Fats, Vitamin A</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>Daily Total</strong></td>
+                        <td><span class="cal-badge total">1,750 kcal</span></td>
+                        <td>Balanced macros</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Nutrition Cards -->
+    <div class="card-grid reveal">
+        <div class="card">
+            <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/food11/400/240" alt="Proteins" class="card-img">
+                <div class="card-overlay"><span>Protein Foods</span></div>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">💪 Protein</span>
+                <h3>Top 5 Protein-Rich Foods</h3>
+                <ul class="content-list">
+                    <li>Chicken breast — 31g protein per 100g</li>
+                    <li>Lentils — 9g protein per 100g (vegan)</li>
+                    <li>Eggs — Complete amino acid profile</li>
+                    <li>Cottage cheese — High casein, great for recovery</li>
+                    <li>Tofu — 8g protein, low calories</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card card-featured">
+            <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/veggie22/400/240" alt="Superfoods" class="card-img">
+                <div class="card-overlay"><span>Superfoods</span></div>
+            </div>
+            <div class="card-body">
+                <span class="card-tag featured-tag">⭐ Must Include</span>
+                <h3>5 Superfoods to Add Today</h3>
+                <ul class="content-list">
+                    <li>Spinach — Loaded with iron & magnesium</li>
+                    <li>Blueberries — Highest antioxidant of any fruit</li>
+                    <li>Turmeric — Powerful anti-inflammatory curcumin</li>
+                    <li>Avocado — Healthy monounsaturated fats</li>
+                    <li>Sweet Potato — Beta-carotene + Vitamin C</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/water33/400/240" alt="Hydration" class="card-img">
+                <div class="card-overlay"><span>Hydration</span></div>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">💧 Hydration</span>
+                <h3>Daily Hydration Guide</h3>
+                <ul class="content-list">
+                    <li>Wake up: 1 glass of warm lemon water</li>
+                    <li>Before meals: 1 glass 30 min prior</li>
+                    <li>During exercise: 200ml every 20 minutes</li>
+                    <li>Afternoon slump: Water, not coffee</li>
+                    <li>Goal: 2.5–3 litres per day total</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORKOUT SECTION -->
+<section class="content-section bg-alt" id="workouts">
+    <div class="section-header reveal">
+        <span class="section-tag">🏋️ Workouts</span>
+        <h2>Exercise Routines for <span class="gradient-text">Every Level</span></h2>
+        <p>Structured plans you can follow at home or at the gym — no excuses needed.</p>
+    </div>
+
+    <!-- Workout Schedule -->
+    <div class="workout-week reveal">
+        <h3>🗓 7-Day Home Workout Schedule</h3>
+        <div class="week-grid">
+            <div class="day-card">
+                <div class="day-label">Monday</div>
+                <div class="day-focus">Upper Body</div>
+                <ul>
+                    <li>Push-ups — 4×15</li>
+                    <li>Dumbbell rows — 3×12</li>
+                    <li>Shoulder press — 3×12</li>
+                    <li>Tricep dips — 3×15</li>
+                </ul>
+                <span class="duration">⏱ 40 min</span>
+            </div>
+            <div class="day-card">
+                <div class="day-label">Tuesday</div>
+                <div class="day-focus">Cardio</div>
+                <ul>
+                    <li>Warm-up jog — 5 min</li>
+                    <li>Jump rope — 3×5 min</li>
+                    <li>High knees — 3×1 min</li>
+                    <li>Cool-down walk — 5 min</li>
+                </ul>
+                <span class="duration">⏱ 35 min</span>
+            </div>
+            <div class="day-card day-featured">
+                <div class="day-label">Wednesday</div>
+                <div class="day-focus">Lower Body 🔥</div>
+                <ul>
+                    <li>Squats — 4×20</li>
+                    <li>Lunges — 3×15 each leg</li>
+                    <li>Glute bridges — 3×20</li>
+                    <li>Calf raises — 4×25</li>
+                </ul>
+                <span class="duration">⏱ 45 min</span>
+            </div>
+            <div class="day-card">
+                <div class="day-label">Thursday</div>
+                <div class="day-focus">Yoga & Stretch</div>
+                <ul>
+                    <li>Sun salutation — 5 rounds</li>
+                    <li>Hip flexor stretch — 2 min</li>
+                    <li>Warrior I & II — hold 45s</li>
+                    <li>Child's pose — 3 min</li>
+                </ul>
+                <span class="duration">⏱ 30 min</span>
+            </div>
+            <div class="day-card">
+                <div class="day-label">Friday</div>
+                <div class="day-focus">Core & Abs</div>
+                <ul>
+                    <li>Plank — 3×1 min</li>
+                    <li>Bicycle crunches — 3×20</li>
+                    <li>Leg raises — 3×15</li>
+                    <li>Russian twists — 3×20</li>
+                </ul>
+                <span class="duration">⏱ 30 min</span>
+            </div>
+            <div class="day-card">
+                <div class="day-label">Saturday</div>
+                <div class="day-focus">Full Body HIIT</div>
+                <ul>
+                    <li>Burpees — 4×10</li>
+                    <li>Mountain climbers — 3×30s</li>
+                    <li>Jump squats — 3×15</li>
+                    <li>Box step-ups — 3×12</li>
+                </ul>
+                <span class="duration">⏱ 40 min</span>
+            </div>
+            <div class="day-card rest-day">
+                <div class="day-label">Sunday</div>
+                <div class="day-focus">Active Rest 😌</div>
+                <ul>
+                    <li>Light 20-min walk</li>
+                    <li>Full body foam roll</li>
+                    <li>Deep breathing — 10 min</li>
+                    <li>Sleep by 10 PM</li>
+                </ul>
+                <span class="duration">⏱ Rest & Recover</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MINDFULNESS SECTION -->
+<section class="content-section" id="mindfulness">
+    <div class="section-header reveal">
+        <span class="section-tag">🧘 Mindfulness</span>
+        <h2>Calm Your Mind, <span class="gradient-text">Sharpen Your Focus</span></h2>
+        <p>Simple, science-proven techniques you can practice anywhere, anytime.</p>
+    </div>
+    <div class="mindful-grid reveal">
+        <div class="mindful-card">
+            <div class="mindful-icon">🌬️</div>
+            <h3>4-7-8 Breathing</h3>
+            <p>Inhale for <strong>4 seconds</strong>, hold for <strong>7 seconds</strong>, exhale slowly for <strong>8 seconds</strong>. Repeat 4 times. Proven to reduce anxiety and lower heart rate within minutes.</p>
+            <span class="mindful-tag">Stress Relief</span>
+        </div>
+        <div class="mindful-card mindful-featured">
+            <div class="mindful-icon">🧠</div>
+            <h3>5-Minute Body Scan</h3>
+            <p>Lie down. Close eyes. Slowly move your attention from toes to head, noticing sensations without judgment. This trains your brain to disconnect from anxious thoughts and stay present.</p>
+            <span class="mindful-tag">Daily Practice</span>
+        </div>
+        <div class="mindful-card">
+            <div class="mindful-icon">📓</div>
+            <h3>Gratitude Journaling</h3>
+            <p>Every morning write <strong>3 things you're grateful for</strong>. Studies show this shifts brain focus from threats to positives, lowering cortisol levels and improving mood within 2 weeks.</p>
+            <span class="mindful-tag">Mental Clarity</span>
+        </div>
+        <div class="mindful-card">
+            <div class="mindful-icon">📵</div>
+            <h3>Digital Detox Hour</h3>
+            <p>Spend the <strong>first hour of your morning</strong> without any screen. Read, stretch, or sit in silence. This prevents dopamine spikes that lead to anxiety and attention fragmentation.</p>
+            <span class="mindful-tag">Focus Boost</span>
+        </div>
+        <div class="mindful-card">
+            <div class="mindful-icon">🌳</div>
+            <h3>Nature Walk Meditation</h3>
+            <p>Walk slowly and notice <strong>5 things you see, 4 you hear, 3 you feel</strong>. This grounding technique instantly pulls you out of overthinking and reconnects you with the present moment.</p>
+            <span class="mindful-tag">Anxiety Relief</span>
+        </div>
+        <div class="mindful-card">
+            <div class="mindful-icon">🕯️</div>
+            <h3>Evening Wind-Down Ritual</h3>
+            <p>1 hour before bed: dim lights, no screens, herbal tea, 5 min of deep breathing. This signals your nervous system to shift into rest mode, reducing the time to fall asleep by 50%.</p>
+            <span class="mindful-tag">Better Sleep</span>
+        </div>
+    </div>
+</section>
+
+<!-- SLEEP SECTION -->
+<section class="content-section bg-alt" id="sleep">
+    <div class="section-header reveal">
+        <span class="section-tag">😴 Sleep</span>
+        <h2>The Science of <span class="gradient-text">Restorative Sleep</span></h2>
+        <p>Quality sleep is the single most powerful recovery and health tool available — completely free.</p>
+    </div>
+    <div class="sleep-layout reveal">
+        <div class="sleep-img-wrap">
+            <img src="https://picsum.photos/seed/sleep99/500/560" alt="Sleep well" class="sleep-img">
+        </div>
+        <div class="sleep-content">
+            <h3>😴 The 7 Golden Rules of Sleep</h3>
+            <div class="sleep-rules">
+                <div class="sleep-rule">
+                    <span class="rule-num">01</span>
+                    <div><strong>Fixed sleep/wake time</strong><p>Go to bed and wake up at the same time every day — even weekends. This anchors your circadian rhythm.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">02</span>
+                    <div><strong>Keep it cool & dark</strong><p>Ideal bedroom temperature is 18–20°C. Darkness triggers melatonin production. Use blackout curtains.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">03</span>
+                    <div><strong>No caffeine after 2 PM</strong><p>Caffeine has a 6-hour half-life. A 3 PM coffee still has 50% of its stimulant effect at 9 PM.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">04</span>
+                    <div><strong>No screens 1 hour before bed</strong><p>Blue light suppresses melatonin by up to 90 minutes. Switch to a book or gentle music instead.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">05</span>
+                    <div><strong>Exercise — but not after 7 PM</strong><p>Regular exercise improves sleep depth. Late evening workouts raise core temperature, delaying sleep onset.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">06</span>
+                    <div><strong>Avoid alcohol as a sleep aid</strong><p>Alcohol reduces REM sleep by 25%, leaving you groggy and unrestored even after 8 hours.</p></div>
+                </div>
+                <div class="sleep-rule">
+                    <span class="rule-num">07</span>
+                    <div><strong>Aim for 7–9 hours</strong><p>Below 6 hours: immunity drops 70%, cognitive function drops 40%, and injury risk doubles.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">Vitalé</div>
+            <p>Science-backed wellness content<br>for healthier, happier lives.</p>
+        </div>
+        <div class="footer-links-group">
+            <h5>Content</h5>
+            <a href="#nutrition">Nutrition</a>
+            <a href="#workouts">Workouts</a>
+            <a href="#mindfulness">Mindfulness</a>
+            <a href="#sleep">Sleep</a>
+        </div>
+        <div class="footer-links-group">
+            <h5>More</h5>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Vitalé Wellness. All rights reserved. Made with 💚 for healthier living.</p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .section-header, .card, .mindful-card, .day-card').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

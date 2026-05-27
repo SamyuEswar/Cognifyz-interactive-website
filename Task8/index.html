@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lumiere Pastry Co. — Dreamy pastel confections, custom macarons, and whimsical sweet creations." />
+  <title>Lumiere Pastry Co. | Sweet Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Sweet Particles -->
+  <div class="candy-floating-container" id="candyContainer"></div>
+
+  <!-- Header -->
+  <header class="sweets-header">
+    <div class="brand-badge">✨ Freshly Baked Daily ✨</div>
+    <h1 class="brand-title">Lumiere <span>Pastry Co.</span></h1>
+    <p class="brand-tagline">Step into our whimsical Sweet Lab where culinary artistry meets dreamlike pastel delicacies.</p>
+    <div class="deco-divider">
+      <span class="dot"></span>
+      <span class="star">★</span>
+      <span class="dot"></span>
+    </div>
+  </header>
+
+  <!-- Interactive Sweet Lab Experience -->
+  <main class="sweet-lab-container">
+    <div class="lab-grid">
+      
+      <!-- Interactive Dessert Builder Card -->
+      <section class="builder-card">
+        <div class="card-header">
+          <span class="step-num">01</span>
+          <h2>The Dessert Assembler</h2>
+          <p>Mix &amp; match bases, fillings, and dreamy toppings to construct your customized treat.</p>
+        </div>
+
+        <form id="dessertForm">
+          <!-- Base Options -->
+          <fieldset class="lab-section">
+            <legend class="lab-legend">Choose Your Base</legend>
+            <div class="options-grid">
+              <label class="option-card" id="base-macaron">
+                <input type="radio" name="dessertBase" value="macaron" checked />
+                <span class="custom-card">
+                  <span class="option-emoji">🧁</span>
+                  <span class="option-name">Double Macaron</span>
+                  <span class="option-desc">Light &amp; chewy almond shells</span>
+                </span>
+              </label>
+              <label class="option-card" id="base-tart">
+                <input type="radio" name="dessertBase" value="tart" />
+                <span class="custom-card">
+                  <span class="option-emoji">🥧</span>
+                  <span class="option-name">Buttery Tart Shell</span>
+                  <span class="option-desc">Crisp shortbread crust</span>
+                </span>
+              </label>
+              <label class="option-card" id="base-choux">
+                <input type="radio" name="dessertBase" value="choux" />
+                <span class="custom-card">
+                  <span class="option-emoji">🥯</span>
+                  <span class="option-name">Choux Puff</span>
+                  <span class="option-desc">Light, airy French pastry cream puff</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Filling Options -->
+          <fieldset class="lab-section">
+            <legend class="lab-legend">Dreamy Cream Fillings</legend>
+            <div class="options-grid">
+              <label class="option-card" id="fill-lavender">
+                <input type="radio" name="dessertFill" value="lavender" checked />
+                <span class="custom-card">
+                  <span class="option-indicator option-lavender"></span>
+                  <span class="option-name">Lavender Honey</span>
+                </span>
+              </label>
+              <label class="option-card" id="fill-rose">
+                <input type="radio" name="dessertFill" value="rose" />
+                <span class="custom-card">
+                  <span class="option-indicator option-rose"></span>
+                  <span class="option-name">Rosewater Pistachio</span>
+                </span>
+              </label>
+              <label class="option-card" id="fill-mint">
+                <input type="radio" name="dessertFill" value="mint" />
+                <span class="custom-card">
+                  <span class="option-indicator option-mint"></span>
+                  <span class="option-name">Vanilla Matcha Mint</span>
+                </span>
+              </label>
+              <label class="option-card" id="fill-peach">
+                <input type="radio" name="dessertFill" value="peach" />
+                <span class="custom-card">
+                  <span class="option-indicator option-peach"></span>
+                  <span class="option-name">Peach Blossom Curd</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Dreamy Toppings -->
+          <fieldset class="lab-section">
+            <legend class="lab-legend">Whimsical Toppings</legend>
+            <div class="checkbox-grid">
+              <label class="cb-option">
+                <input type="checkbox" name="toppings" value="goldDust" />
+                <span class="cb-custom"></span>
+                <span class="cb-label">24k Gold Dust</span>
+              </label>
+              <label class="cb-option">
+                <input type="checkbox" name="toppings" value="flowers" />
+                <span class="cb-custom"></span>
+                <span class="cb-label">Edible Pansies</span>
+              </label>
+              <label class="cb-option">
+                <input type="checkbox" name="toppings" value="pearls" />
+                <span class="cb-custom"></span>
+                <span class="cb-label">Sugar Pearls</span>
+              </label>
+              <label class="cb-option">
+                <input type="checkbox" name="toppings" value="fairyFloss" />
+                <span class="cb-custom"></span>
+                <span class="cb-label">Unicorn Fairy Floss</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Customer info -->
+          <fieldset class="lab-section">
+            <legend class="lab-legend">Collection Details</legend>
+            <div class="field-group">
+              <label for="custName" class="input-label">Sweet Enthusiast Name</label>
+              <input type="text" id="custName" class="sweet-input" placeholder="e.g. Penelope Sterling" required />
+              <span class="error-msg" id="nameError"></span>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="pickupDate" class="input-label">Select Magical Date</label>
+                <input type="date" id="pickupDate" class="sweet-input" required />
+                <span class="error-msg" id="dateError"></span>
+              </div>
+              <div class="field-group">
+                <label for="pickupTime" class="input-label">Pick-up Hour</label>
+                <select id="pickupTime" class="sweet-input" required>
+                  <option value="">Choose a time...</option>
+                  <option value="morning">Morning Sunshine (10am - 12pm)</option>
+                  <option value="afternoon">Afternoon Dream (1pm - 4pm)</option>
+                  <option value="twilight">Twilight Whispers (5pm - 7pm)</option>
+                </select>
+                <span class="error-msg" id="timeError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Submission -->
+          <div class="lab-footer">
+            <button type="submit" class="btn-assemble" id="assembleBtn">
+              <span class="btn-text">Order My Custom Confection</span>
+              <span class="btn-sparkle">✨</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Interactive 3D/Visual Preview Card -->
+      <section class="preview-card">
+        <div class="preview-sticker">Live Lab Preview</div>
+        <div class="pastry-assembler-visual">
+          <div class="visual-canvas">
+            <!-- Macaron Base Upper Shell -->
+            <div class="pastry-element pastry-top-shell" id="vTopShell"></div>
+            <!-- Cream filling layer -->
+            <div class="pastry-element pastry-filling" id="vFilling"></div>
+            <!-- Macaron Base Lower Shell -->
+            <div class="pastry-element pastry-bottom-shell" id="vBottomShell"></div>
+            <!-- Sparks and toppings overlay -->
+            <div class="toppings-container" id="vToppings"></div>
+          </div>
+        </div>
+
+        <div class="confection-status">
+          <h3>Your Confection Formula</h3>
+          <ul class="formula-list">
+            <li><strong>Base:</strong> <span id="formulaBase">Double Macaron</span></li>
+            <li><strong>Cream:</strong> <span id="formulaFill">Lavender Honey Cream</span></li>
+            <li><strong>Sparkles:</strong> <span id="formulaToppings">Pure &amp; Untouched</span></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Celebration Success Screen Overlay -->
+    <div class="order-success-screen" id="successModal" hidden>
+      <div class="modal-card">
+        <button type="button" class="modal-close-btn" id="closeModalBtn" title="Close">✕</button>
+        <div class="modal-crown">🧁</div>
+        <h3 class="modal-title">Confection Registered!</h3>
+        <p class="modal-text">Your custom pastel treat is saved inside the pastry ledger. We will begin whipping up the sugar base 24 hours before your collection date!</p>
+        <button type="button" class="btn-sweet-action" id="resetLabBtn">Craft Another Dessert</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="sweets-footer">
+    <p>Lumiere Pastry Co. · Established in Dreams · <span>✨ Sweet Magic ✨</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

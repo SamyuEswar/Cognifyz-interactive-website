@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="DataMind — Where Data Meets Intelligence. AI-powered analytics platform."/>
+  <title>DataMind | Where Data Meets Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark dm-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand dm-brand" href="#">
+      <span class="brand-icon">⬡</span> DataMind
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#howitworks">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stack">Tech Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn dm-btn-outline btn-sm" href="#contact">Get Started</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="dm-hero d-flex align-items-center" id="home">
+  <div class="container text-center">
+    <span class="badge dm-badge-pill mb-4">🚀 Now with GPT-4 Integration</span>
+    <h1 class="dm-hero-title">Where <span class="dm-gradient-text">Data</span> Meets<br/>Intelligence</h1>
+    <p class="dm-hero-sub mx-auto">Transform raw data into actionable insights with our AI-powered analytics engine. Real-time, scalable, and beautifully simple.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap mt-5">
+      <a href="#contact" class="btn dm-btn-primary btn-lg px-5">Start Free Trial</a>
+      <a href="#howitworks" class="btn dm-btn-ghost btn-lg px-5">See How It Works</a>
+    </div>
+    <!-- Stats row -->
+    <div class="row g-4 mt-5 justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="dm-stat-card">
+          <div class="dm-stat-num" data-count="98">0</div>
+          <div class="dm-stat-label">Accuracy %</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="dm-stat-card">
+          <div class="dm-stat-num" data-count="12">0</div>
+          <div class="dm-stat-label">TB Data/Day</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="dm-stat-card">
+          <div class="dm-stat-num" data-count="3400">0</div>
+          <div class="dm-stat-label">Clients</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="dm-stat-card">
+          <div class="dm-stat-num" data-count="99">0</div>
+          <div class="dm-stat-label">Uptime %</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="dm-section" id="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="dm-section-tag">Core Features</span>
+      <h2 class="dm-section-title">Built for Modern Intelligence</h2>
+      <p class="dm-section-sub">Everything your team needs to go from raw data to real decisions.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-cpu"></i></div>
+            <h5 class="card-title dm-card-title">AI Model Engine</h5>
+            <p class="card-text dm-card-text">Run custom ML models on live data streams with sub-second latency. AutoML included.</p>
+            <span class="badge dm-badge-feature">New</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <h5 class="card-title dm-card-title">Real-Time Dashboards</h5>
+            <p class="card-text dm-card-text">Drag-and-drop visual builder. 50+ chart types. Share live reports with one click.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-shield-lock"></i></div>
+            <h5 class="card-title dm-card-title">Enterprise Security</h5>
+            <p class="card-text dm-card-text">SOC2 Type II, end-to-end encryption, role-based access control and audit logs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-lightning-charge"></i></div>
+            <h5 class="card-title dm-card-title">Stream Processing</h5>
+            <p class="card-text dm-card-text">Apache Kafka integration. Process millions of events per second without breaking a sweat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-globe"></i></div>
+            <h5 class="card-title dm-card-title">Multi-Cloud Ready</h5>
+            <p class="card-text dm-card-text">Deploy on AWS, GCP or Azure. Hybrid cloud support with zero vendor lock-in.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-feature-card h-100">
+          <div class="card-body p-4">
+            <div class="dm-feature-icon"><i class="bi bi-robot"></i></div>
+            <h5 class="card-title dm-card-title">NLP Query Engine</h5>
+            <p class="card-text dm-card-text">Ask questions in plain English. Our AI translates them into optimised SQL queries instantly.</p>
+            <span class="badge dm-badge-feature">Beta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS — Bootstrap Tabs -->
+<section class="dm-section dm-section-alt" id="howitworks">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="dm-section-tag">Process</span>
+      <h2 class="dm-section-title">How DataMind Works</h2>
+    </div>
+    <ul class="nav nav-pills dm-tabs justify-content-center mb-5" id="howTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-connect" type="button">
+          <i class="bi bi-plug me-2"></i>Connect
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-analyze" type="button">
+          <i class="bi bi-graph-up me-2"></i>Analyse
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-act" type="button">
+          <i class="bi bi-lightning me-2"></i>Act
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content dm-tab-content" id="howTabsContent">
+      <div class="tab-pane fade show active" id="tab-connect">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <h3 class="dm-tab-heading">Connect Any Data Source</h3>
+            <p class="dm-tab-text">Plug in databases, APIs, spreadsheets or cloud warehouses in minutes. 200+ native connectors available.</p>
+            <ul class="list-unstyled dm-check-list">
+              <li><i class="bi bi-check-circle-fill"></i> SQL, NoSQL & Data Lakes</li>
+              <li><i class="bi bi-check-circle-fill"></i> REST APIs & Webhooks</li>
+              <li><i class="bi bi-check-circle-fill"></i> CSV, Excel, Google Sheets</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="dm-tab-visual"><i class="bi bi-diagram-3"></i><span>200+ Connectors</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab-analyze">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <h3 class="dm-tab-heading">AI-Powered Analysis</h3>
+            <p class="dm-tab-text">Our engine automatically detects patterns, anomalies and trends. No data science degree required.</p>
+            <ul class="list-unstyled dm-check-list">
+              <li><i class="bi bi-check-circle-fill"></i> Predictive Analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i> Anomaly Detection</li>
+              <li><i class="bi bi-check-circle-fill"></i> Natural Language Queries</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="dm-tab-visual"><i class="bi bi-brain"></i><span>AI Analysis Engine</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab-act">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <h3 class="dm-tab-heading">Act on Insights Instantly</h3>
+            <p class="dm-tab-text">Set automated alerts, trigger workflows and share beautiful reports with stakeholders in one click.</p>
+            <ul class="list-unstyled dm-check-list">
+              <li><i class="bi bi-check-circle-fill"></i> Automated Alerts & Reports</li>
+              <li><i class="bi bi-check-circle-fill"></i> Slack, Teams & Email Integration</li>
+              <li><i class="bi bi-check-circle-fill"></i> One-click Dashboard Sharing</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="dm-tab-visual"><i class="bi bi-send-check"></i><span>Instant Actions</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK — Bootstrap Accordion + Progress Bars -->
+<section class="dm-section" id="stack">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="dm-section-tag">Technology</span>
+      <h2 class="dm-section-title">Our Tech Stack</h2>
+      <p class="dm-section-sub">Enterprise-grade technology powering every layer of the platform.</p>
+    </div>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <div class="accordion dm-accordion" id="techAccordion">
+          <div class="accordion-item dm-acc-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button dm-acc-btn" type="button" data-bs-toggle="collapse" data-bs-target="#acc1">
+                <i class="bi bi-layers me-2"></i> Data Layer
+              </button>
+            </h2>
+            <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#techAccordion">
+              <div class="accordion-body dm-acc-body">Apache Kafka for streaming, PostgreSQL & MongoDB for storage, Redis for caching. Handles petabyte-scale workloads effortlessly.</div>
+            </div>
+          </div>
+          <div class="accordion-item dm-acc-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button dm-acc-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2">
+                <i class="bi bi-cpu me-2"></i> AI / ML Layer
+              </button>
+            </h2>
+            <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+              <div class="accordion-body dm-acc-body">TensorFlow, PyTorch, scikit-learn. GPT-4 via OpenAI API. AutoML pipeline with MLflow tracking and model versioning.</div>
+            </div>
+          </div>
+          <div class="accordion-item dm-acc-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button dm-acc-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3">
+                <i class="bi bi-server me-2"></i> Infrastructure
+              </button>
+            </h2>
+            <div id="acc3" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+              <div class="accordion-body dm-acc-body">Kubernetes orchestration on multi-cloud. Terraform IaC, GitHub Actions CI/CD, Prometheus + Grafana observability.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="dm-progress-section">
+          <p class="dm-progress-label">Data Processing Speed</p>
+          <div class="progress dm-progress mb-4"><div class="progress-bar dm-bar" data-width="96" style="width:0%">96%</div></div>
+          <p class="dm-progress-label">Model Accuracy</p>
+          <div class="progress dm-progress mb-4"><div class="progress-bar dm-bar dm-bar-purple" data-width="98" style="width:0%">98%</div></div>
+          <p class="dm-progress-label">System Uptime</p>
+          <div class="progress dm-progress mb-4"><div class="progress-bar dm-bar dm-bar-green" data-width="99" style="width:0%">99.9%</div></div>
+          <p class="dm-progress-label">Security Score</p>
+          <div class="progress dm-progress mb-2"><div class="progress-bar dm-bar dm-bar-cyan" data-width="100" style="width:0%">A+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING — Bootstrap Cards -->
+<section class="dm-section dm-section-alt" id="pricing">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="dm-section-tag">Pricing</span>
+      <h2 class="dm-section-title">Simple, Transparent Pricing</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-price-card h-100">
+          <div class="card-body p-4 p-xl-5">
+            <p class="dm-plan-name">Starter</p>
+            <div class="dm-price">$0<span>/mo</span></div>
+            <p class="dm-plan-sub">For individuals & side projects</p>
+            <hr class="dm-hr"/>
+            <ul class="list-unstyled dm-plan-features">
+              <li><i class="bi bi-check2"></i> Up to 5 dashboards</li>
+              <li><i class="bi bi-check2"></i> 1 GB data / month</li>
+              <li><i class="bi bi-check2"></i> Community support</li>
+              <li class="dm-feature-off"><i class="bi bi-x"></i> AI Model Engine</li>
+            </ul>
+            <a href="#contact" class="btn dm-btn-outline w-100 mt-3">Get Started Free</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-price-card dm-price-card-featured h-100">
+          <div class="dm-popular-badge">Most Popular</div>
+          <div class="card-body p-4 p-xl-5">
+            <p class="dm-plan-name">Pro</p>
+            <div class="dm-price">$49<span>/mo</span></div>
+            <p class="dm-plan-sub">For growing teams</p>
+            <hr class="dm-hr"/>
+            <ul class="list-unstyled dm-plan-features">
+              <li><i class="bi bi-check2"></i> Unlimited dashboards</li>
+              <li><i class="bi bi-check2"></i> 500 GB data / month</li>
+              <li><i class="bi bi-check2"></i> Priority support</li>
+              <li><i class="bi bi-check2"></i> AI Model Engine</li>
+            </ul>
+            <a href="#contact" class="btn dm-btn-primary w-100 mt-3">Start Pro Trial</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dm-price-card h-100">
+          <div class="card-body p-4 p-xl-5">
+            <p class="dm-plan-name">Enterprise</p>
+            <div class="dm-price">Custom</div>
+            <p class="dm-plan-sub">For large organisations</p>
+            <hr class="dm-hr"/>
+            <ul class="list-unstyled dm-plan-features">
+              <li><i class="bi bi-check2"></i> Unlimited everything</li>
+              <li><i class="bi bi-check2"></i> Dedicated infra</li>
+              <li><i class="bi bi-check2"></i> 24/7 dedicated support</li>
+              <li><i class="bi bi-check2"></i> Custom SLAs</li>
+            </ul>
+            <a href="#contact" class="btn dm-btn-outline w-100 mt-3">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALERT BANNER -->
+<div class="dm-alert-banner">
+  <div class="container text-center">
+    <i class="bi bi-stars me-2"></i>
+    <strong>Limited Offer:</strong> Get 3 months free on Pro plan. Use code <span class="dm-code">DATAMIND3</span> at checkout.
+    <button type="button" class="btn-close btn-close-white ms-4" data-bs-dismiss="alert" aria-label="Close" style="float:none;"></button>
+  </div>
+</div>
+
+<!-- CONTACT / NEWSLETTER -->
+<section class="dm-section" id="contact">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <span class="dm-section-tag">Get Started</span>
+        <h2 class="dm-section-title">Ready to Unlock Your Data?</h2>
+        <p class="dm-section-sub mb-5">Join 3,400+ teams already using DataMind. Free trial, no credit card required.</p>
+        <form id="contactForm" class="dm-contact-form needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <input type="text" class="form-control dm-input" id="cName" placeholder="Full Name" required/>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-sm-6">
+              <input type="email" class="form-control dm-input" id="cEmail" placeholder="Work Email" required/>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-12">
+              <select class="form-select dm-input" id="cPlan" required>
+                <option value="">Select a Plan</option>
+                <option>Starter (Free)</option>
+                <option>Pro ($49/mo)</option>
+                <option>Enterprise</option>
+              </select>
+              <div class="invalid-feedback">Please select a plan.</div>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control dm-input" id="cMsg" rows="3" placeholder="Tell us about your data challenge…"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn dm-btn-primary btn-lg w-100" id="formSubmitBtn">
+                <span class="btn-label">Start My Free Trial</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+          <div class="dm-form-success mt-4" id="formSuccess" hidden>
+            <div class="alert dm-success-alert" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <strong>You're in!</strong> Check your email for next steps.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="dm-footer">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      <div class="col-lg-4">
+        <div class="dm-brand mb-3"><span class="brand-icon">⬡</span> DataMind</div>
+        <p class="dm-footer-text">AI-powered analytics for the modern data team. Built with love and lots of compute.</p>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-2">
+        <p class="dm-footer-heading">Product</p>
+        <ul class="list-unstyled dm-footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <p class="dm-footer-heading">Company</p>
+        <ul class="list-unstyled dm-footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <p class="dm-footer-heading">Legal</p>
+        <ul class="list-unstyled dm-footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="dm-footer-hr"/>
+    <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+      <p class="dm-footer-copy mb-0">© 2026 DataMind Inc. All rights reserved.</p>
+      <div class="dm-social-icons">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

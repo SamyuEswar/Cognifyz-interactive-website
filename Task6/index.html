@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book an exclusive seat at The Hollow Table — an underground supper club offering secret, rotating chef-curated dining experiences." />
+  <title>The Hollow Table | Secret Supper Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-overlay"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- Page Hero -->
+  <header class="hero">
+    <div class="hero-badge">Est. 1997 · By Invitation Only</div>
+    <h1 class="hero-title">The <em>Hollow</em> Table</h1>
+    <p class="hero-subtitle">An underground supper club where strangers become guests,<br/>and every dinner is a secret worth keeping.</p>
+    <div class="hero-divider">
+      <span class="divider-line"></span>
+      <span class="divider-icon">✦</span>
+      <span class="divider-line"></span>
+    </div>
+    <p class="hero-hint">Reserve your seat below. We'll send you the location 24 hours before.</p>
+  </header>
+
+  <!-- Main Booking Form -->
+  <main class="form-container" id="main-content">
+    <div class="form-card">
+
+      <div class="form-header">
+        <span class="form-tag">Reservation Request</span>
+        <h2 class="form-title">Claim Your Place at the Table</h2>
+        <p class="form-desc">All fields are confidential. We respect your privacy as much as our secret locations.</p>
+      </div>
+
+      <form id="supperForm" novalidate autocomplete="off">
+
+        <!-- Section 1: Identity -->
+        <fieldset class="form-section">
+          <legend class="section-legend"><span class="legend-num">01</span> Who Are You?</legend>
+
+          <div class="field-row">
+            <div class="field-group" id="fg-firstName">
+              <label for="firstName" class="field-label">First Name <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="input-icon">◈</span>
+                <input type="text" id="firstName" name="firstName" class="field-input" placeholder="e.g. Elara" maxlength="50" />
+              </div>
+              <span class="field-error" id="err-firstName" role="alert"></span>
+            </div>
+
+            <div class="field-group" id="fg-lastName">
+              <label for="lastName" class="field-label">Last Name <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="input-icon">◈</span>
+                <input type="text" id="lastName" name="lastName" class="field-input" placeholder="e.g. Voss" maxlength="50" />
+              </div>
+              <span class="field-error" id="err-lastName" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="field-group" id="fg-email">
+            <label for="email" class="field-label">Email Address <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+              <input type="email" id="email" name="email" class="field-input" placeholder="your@secret.email" />
+            </div>
+            <span class="field-error" id="err-email" role="alert"></span>
+          </div>
+
+          <div class="field-group" id="fg-phone">
+            <label for="phone" class="field-label">Phone Number <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">✆</span>
+              <input type="tel" id="phone" name="phone" class="field-input" placeholder="+91 98765 43210" maxlength="15" />
+            </div>
+            <span class="field-hint">We'll use this only to send your location code.</span>
+            <span class="field-error" id="err-phone" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Section 2: Dining Details -->
+        <fieldset class="form-section">
+          <legend class="section-legend"><span class="legend-num">02</span> Your Dining Preferences</legend>
+
+          <div class="field-row">
+            <div class="field-group" id="fg-date">
+              <label for="date" class="field-label">Preferred Date <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="input-icon">◷</span>
+                <input type="date" id="date" name="date" class="field-input" />
+              </div>
+              <span class="field-error" id="err-date" role="alert"></span>
+            </div>
+
+            <div class="field-group" id="fg-guests">
+              <label for="guests" class="field-label">Number of Guests <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="input-icon">♟</span>
+                <input type="number" id="guests" name="guests" class="field-input" placeholder="1" min="1" max="8" />
+              </div>
+              <span class="field-hint">Max 8 per reservation.</span>
+              <span class="field-error" id="err-guests" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="field-group" id="fg-cuisine">
+            <label for="cuisine" class="field-label">Cuisine Experience <span class="required">*</span></label>
+            <div class="input-wrapper select-wrapper">
+              <span class="input-icon">⚑</span>
+              <select id="cuisine" name="cuisine" class="field-input field-select">
+                <option value="">— Choose your journey —</option>
+                <option value="omakase">Japanese Omakase</option>
+                <option value="nordic">New Nordic</option>
+                <option value="mex-modern">Modern Mexican</option>
+                <option value="levantine">Levantine Feast</option>
+                <option value="peruvian">Peruvian Fusion</option>
+                <option value="westAfrican">West African Roots</option>
+                <option value="chefSurprise">Chef's Surprise (Rotating)</option>
+              </select>
+            </div>
+            <span class="field-error" id="err-cuisine" role="alert"></span>
+          </div>
+
+          <div class="field-group" id="fg-dietary">
+            <label class="field-label">Dietary Requirements</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-label" id="cb-vegan">
+                <input type="checkbox" name="dietary" value="vegan" id="diet-vegan" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Vegan</span>
+              </label>
+              <label class="checkbox-label" id="cb-vegetarian">
+                <input type="checkbox" name="dietary" value="vegetarian" id="diet-vegetarian" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Vegetarian</span>
+              </label>
+              <label class="checkbox-label" id="cb-glutenFree">
+                <input type="checkbox" name="dietary" value="glutenFree" id="diet-glutenFree" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Gluten-Free</span>
+              </label>
+              <label class="checkbox-label" id="cb-dairyFree">
+                <input type="checkbox" name="dietary" value="dairyFree" id="diet-dairyFree" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Dairy-Free</span>
+              </label>
+              <label class="checkbox-label" id="cb-nutFree">
+                <input type="checkbox" name="dietary" value="nutFree" id="diet-nutFree" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Nut-Free</span>
+              </label>
+              <label class="checkbox-label" id="cb-halal">
+                <input type="checkbox" name="dietary" value="halal" id="diet-halal" class="cb-input" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">Halal</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group" id="fg-occasion">
+            <label class="field-label">Is This a Special Occasion?</label>
+            <div class="radio-grid">
+              <label class="radio-label" id="rb-none">
+                <input type="radio" name="occasion" value="none" id="occ-none" class="rb-input" checked />
+                <span class="rb-custom"></span>
+                <span class="rb-text">Just a dinner</span>
+              </label>
+              <label class="radio-label" id="rb-birthday">
+                <input type="radio" name="occasion" value="birthday" id="occ-birthday" class="rb-input" />
+                <span class="rb-custom"></span>
+                <span class="rb-text">Birthday</span>
+              </label>
+              <label class="radio-label" id="rb-anniversary">
+                <input type="radio" name="occasion" value="anniversary" id="occ-anniversary" class="rb-input" />
+                <span class="rb-custom"></span>
+                <span class="rb-text">Anniversary</span>
+              </label>
+              <label class="radio-label" id="rb-proposal">
+                <input type="radio" name="occasion" value="proposal" id="occ-proposal" class="rb-input" />
+                <span class="rb-custom"></span>
+                <span class="rb-text">Proposal ✦</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Section 3: The Secret -->
+        <fieldset class="form-section">
+          <legend class="section-legend"><span class="legend-num">03</span> The Oath & Secret Pass</legend>
+
+          <div class="field-group" id="fg-password">
+            <label for="secretPass" class="field-label">Secret Passphrase <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">⚷</span>
+              <input type="password" id="secretPass" name="secretPass" class="field-input" placeholder="Min 8 chars, 1 number, 1 symbol" />
+              <button type="button" class="toggle-pass" id="togglePass" aria-label="Toggle password visibility">👁</button>
+            </div>
+            <div class="password-strength" id="passStrength">
+              <div class="strength-bar">
+                <span class="strength-fill" id="strengthFill"></span>
+              </div>
+              <span class="strength-label" id="strengthLabel">Enter a passphrase</span>
+            </div>
+            <span class="field-error" id="err-secretPass" role="alert"></span>
+          </div>
+
+          <div class="field-group" id="fg-howHeard">
+            <label for="howHeard" class="field-label">How Did You Hear of Us? <span class="required">*</span></label>
+            <div class="input-wrapper select-wrapper">
+              <span class="input-icon">◉</span>
+              <select id="howHeard" name="howHeard" class="field-input field-select">
+                <option value="">— Choose —</option>
+                <option value="whisper">A whisper from a friend</option>
+                <option value="instagram">Instagram (shh…)</option>
+                <option value="magazine">A magazine I can't name</option>
+                <option value="chance">Pure chance</option>
+                <option value="other">I'd rather not say</option>
+              </select>
+            </div>
+            <span class="field-error" id="err-howHeard" role="alert"></span>
+          </div>
+
+          <div class="field-group" id="fg-message">
+            <label for="message" class="field-label">A Note to the Chef <span class="optional">(optional)</span></label>
+            <div class="input-wrapper textarea-wrapper">
+              <textarea id="message" name="message" class="field-input field-textarea" placeholder="Allergies, requests, or secrets of your own…" maxlength="300" rows="4"></textarea>
+            </div>
+            <span class="char-count" id="charCount">0 / 300</span>
+            <span class="field-error" id="err-message" role="alert"></span>
+          </div>
+
+          <div class="field-group" id="fg-terms">
+            <label class="checkbox-label terms-check" id="cb-terms">
+              <input type="checkbox" id="terms" name="terms" class="cb-input" />
+              <span class="cb-custom"></span>
+              <span class="cb-text">I swear to keep the location secret and arrive on time. <span class="required">*</span></span>
+            </label>
+            <span class="field-error" id="err-terms" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">Request My Seat</span>
+            <span class="btn-icon">→</span>
+          </button>
+          <button type="reset" class="btn-reset" id="resetBtn">Clear Form</button>
+        </div>
+
+      </form>
+
+      <!-- Success Message -->
+      <div class="success-card" id="successCard" hidden>
+        <div class="success-icon">✦</div>
+        <h3 class="success-title">Your seat is requested.</h3>
+        <p class="success-text">We'll confirm your reservation and send the secret location code to your phone 24 hours before dinner. Until then — tell no one.</p>
+        <button class="btn-new" id="newReservationBtn">Make Another Reservation</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>The Hollow Table · Since 1997 · <em>Somewhere in the city.</em></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

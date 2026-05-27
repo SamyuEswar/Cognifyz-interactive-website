@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="World Explorer – Browse all countries of the world using live data from the REST Countries API." />
+  <title>World Explorer | Task 5 – API Integration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-globe">🌍</span>
+        <div class="logo-text-wrap">
+          <span class="logo-title">WorldExplorer</span>
+          <span class="logo-sub">REST Countries API</span>
+        </div>
+      </div>
+      <div class="api-badge" id="api-badge">
+        <span class="badge-dot" id="badge-dot"></span>
+        <span id="badge-label">Connecting…</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="task-chip">TASK 5 — API INTEGRATION</div>
+      <h1 class="hero-title">Explore Every<br/><span class="hero-accent">Country on Earth</span></h1>
+      <p class="hero-desc">
+        Live data fetched from the <code>REST Countries API</code> via <code>fetch()</code>, 
+        parsed as JSON and rendered dynamically into the DOM.
+      </p>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card">
+        <span class="stat-num" id="stat-countries">—</span>
+        <span class="stat-lbl">Countries</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-population">—</span>
+        <span class="stat-lbl">World Population</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-regions">—</span>
+        <span class="stat-lbl">Regions</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-languages">—</span>
+        <span class="stat-lbl">Languages</span>
+      </div>
+    </div>
+
+    <!-- Controls: Search + Filter -->
+    <div class="controls" id="controls">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Search any country…"
+          autocomplete="off"
+          aria-label="Search countries"
+        />
+        <button class="clear-btn" id="clear-btn" aria-label="Clear search">✕</button>
+      </div>
+      <div class="filter-wrap" id="filter-wrap">
+        <button class="filter-btn active" data-region="all">All</button>
+        <button class="filter-btn" data-region="Africa">Africa</button>
+        <button class="filter-btn" data-region="Americas">Americas</button>
+        <button class="filter-btn" data-region="Asia">Asia</button>
+        <button class="filter-btn" data-region="Europe">Europe</button>
+        <button class="filter-btn" data-region="Oceania">Oceania</button>
+      </div>
+    </div>
+
+    <!-- Results count -->
+    <div class="results-meta" id="results-meta"></div>
+
+    <!-- Country Cards Grid -->
+    <div class="cards-grid" id="cards-grid">
+      <!-- Skeleton placeholders -->
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+      <div class="country-card skeleton-card"><div class="sk-flag"></div><div class="sk-body"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div></div></div>
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more-wrap" id="load-more-wrap" style="display:none">
+      <button class="load-more-btn" id="load-more-btn">Load More Countries</button>
+    </div>
+
+
+
+  </main>
+
+  <!-- ── COUNTRY DETAIL MODAL ── -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="modal-body" id="modal-body">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Data source: <a href="https://restcountries.com" target="_blank" rel="noopener">REST Countries API v3.1</a>
+    &nbsp;|&nbsp; Task 5 – API Integration
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

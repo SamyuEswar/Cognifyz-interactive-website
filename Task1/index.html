@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abyssal Wonders: Deep Sea Exploration</title>
+    <style>
+        :root {
+            --bg-color-top: #005c97;
+            --bg-color-bottom: #001f3f;
+            --text-color: #e0f7fa;
+            --glow-color: #4df8ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, var(--bg-color-top), var(--bg-color-bottom));
+            background-attachment: fixed;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            color: var(--glow-color);
+            text-shadow: 0 0 15px rgba(77, 248, 255, 0.7);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            border-bottom: 2px solid rgba(77, 248, 255, 0.4);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            text-shadow: 0 0 8px rgba(77, 248, 255, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #d1f2f9;
+        }
+
+        /* New Image Grid Styles */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(77, 248, 255, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 2px solid rgba(77, 248, 255, 0.2);
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(77, 248, 255, 0.9);
+            z-index: 10;
+            position: relative;
+            border-color: var(--glow-color);
+        }
+
+        @media (max-width: 600px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fact-box {
+            background: rgba(0, 31, 63, 0.6);
+            border-left: 4px solid var(--glow-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1f2f9;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--glow-color);
+            border: 2px solid var(--glow-color);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: var(--glow-color);
+            color: #001f3f;
+            box-shadow: 0 0 20px rgba(77, 248, 255, 0.6);
+        }
+
+        .interactive-section {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px dashed rgba(77, 248, 255, 0.3);
+        }
+
+        #hidden-fact {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(77, 248, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-style: italic;
+            border: 1px solid rgba(77, 248, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Abyssal Wonders</h1>
+        <p style="text-align: center; font-style: italic; color: #b3e5fc;">Journey into the crushing depths of the
+            Mariana Trench</p>
+
+        <h2>The Light in the Darkness</h2>
+        <p>At extreme depths where the sun's rays can no longer penetrate, life has found an extraordinary way to
+            survive. The Mariana Trench, plunging nearly 36,000 feet below the surface of the ocean, is home to
+            incredible creatures that generate their own light. This phenomenon, known as bioluminescence, is used to
+            attract prey, deter predators, and communicate in pitch blackness.</p>
+
+        <!-- Replaced single image with an Image Grid Gallery -->
+        <div class="image-grid">
+            <img src="deep_sea.png" alt="Bioluminescent Jellyfish">
+            <img src="anglerfish.png" alt="Deep Sea Anglerfish">
+            <img src="octopus.png" alt="Glowing Translucent Octopus">
+            <img src="deep_vent.png" alt="Glowing Hydrothermal Vent">
+        </div>
+
+        <div class="fact-box">
+            <strong>Did you know?</strong> Over 80% of the ocean is unmapped, unobserved, and unexplored. We know more
+            about the surface of Mars than we do about our own deep sea floors!
+        </div>
+
+        <h2>Creatures of the Abyss</h2>
+        <p>Among the alien-like inhabitants are anglerfish with glowing lures, ghost-like jellyfish pulsating with
+            electric hues, and translucent octopuses that dance through the freezing waters. The pressure down here is
+            over 1,000 times greater than at sea level!</p>
+
+        <h2>Fascinating Deep Sea Zones</h2>
+        <ul>
+            <li><strong>The Twilight Zone (200m - 1,000m):</strong> Only a faint amount of light reaches here. Many
+                animals migrate to the surface at night to feed.</li>
+            <li><strong>The Midnight Zone (1,000m - 4,000m):</strong> Pitch black. The only light here comes from the
+                glowing bioluminescence of the animals themselves.</li>
+            <li><strong>The Abyssal Zone (4,000m - 6,000m):</strong> Near-freezing temperatures and crushing pressure.
+                Life is sparse but incredibly resilient.</li>
+            <li><strong>The Hadal Zone (6,000m+):</strong> Found only in deep ocean trenches like the Mariana. Home to
+                the deepest known fish, the Mariana snailfish.</li>
+        </ul>
+
+        <div class="interactive-section">
+            <button class="btn" onclick="revealFact()">Dive Deeper</button>
+            <div id="hidden-fact">
+                Secret Unlocked! The deepest point in the ocean is called the <em>Challenger Deep</em>. If you dropped
+                Mount Everest into it, the peak would still be over a mile underwater!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function revealFact() {
+            var fact = document.getElementById("hidden-fact");
+            if (fact.style.display === "none" || fact.style.display === "") {
+                fact.style.display = "block";
+                fact.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                fact.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
